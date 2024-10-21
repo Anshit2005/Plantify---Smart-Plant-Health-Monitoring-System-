@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Health Monitoring System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Plant Health Monitoring System</h1>
+        <p>Upload an image of your plant and monitor its health through real-time data.</p>
+    </header>
+    <main class="flex-container">
+        <section class="left-section">
+            <div class="upload-box">
+                <label for="upload-image">Upload an Image of Your Plant</label>
+                <p>Drag and drop or click to upload an image of your plant.</p>
+                <input type="file" id="upload-image" accept="image/*">
+                <button>Upload</button>
+            </div>
+            <div class="live-plant-image-box">
+                <label>Live Plant Image</label>
+                <p>Displays the current plant image based on live data.</p>
+                <img src="" alt="Live Plant Image">
+            </div>
+        </section>
+        <section class="right-section">
+            <div class="live-data-display-box">
+                <label>Current Humidity</label>
+                <p>Live humidity level (%)</p>
+                <input type="text" id="humidity" readonly>
+            </div>
+            <div class="live-data-display-box">
+                <label>Current Temperature</label>
+                <p>Live temperature (°C or °F)</p>
+                <input type="text" id="temperature" readonly>
+            </div>
+            <div class="live-data-display-box">
+                <label>Soil Moisture Level</label>
+                <p>Live soil moisture level (%)</p>
+                <input type="text" id="soil-moisture" readonly>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Data sources: [insert data sources]</p>
+        <p>Learn more about interpreting readings: [insert links to resources or documentation]</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
