@@ -44,3 +44,42 @@ Plantify/
 │
 └── images/
     └── example_plant_image.png        # Sample AI-generated image
+```
+
+## Setup Instructions
+
+### NodeMCU Setup
+- Connect the DHT11 and Soil Moisture sensors to NodeMCU.
+- Upload the Arduino code for NodeMCU provided in the `src/nodemcu_server/` directory using the Arduino IDE.
+- The ESP web server will serve the sensor data.
+
+### Web Interface Setup
+- Open the `index.html` file located in the `web/` directory to view real-time data.
+- The interface will automatically refresh sensor data every 10 seconds using API calls.
+
+### API Calls
+- The JavaScript file for API calls can be found in the `src/api_calls/` directory, which fetches sensor data from the ESP server and updates the webpage.
+
+### AI Models (Optional)
+- Add AI models to the `src/ai_models/` directory.
+  - The prompt generation model creates prompts from sensor data, while the image generation model visualizes the plant’s condition.
+
+## How It Works
+1. **Sensors:** NodeMCU collects temperature, humidity, and soil moisture data.
+2. **Web Server:** ESP8266 serves this data as a JSON API.
+3. **Frontend:** The web interface fetches the sensor data and displays it.
+4. **AI Models:** (Optional) AI generates plant images based on sensor data.
+
+## Contributors
+- [Your Name] - Developer
+
+## Technologies Used
+- NodeMCU (ESP8266)
+- DHT11 Sensor
+- Soil Moisture Sensor
+- JavaScript (API Calls)
+- HTML/CSS (Frontend)
+- AI/ML Models for data-to-image generation
+
+## License
+This project is licensed under the MIT License.
