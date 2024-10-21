@@ -1,0 +1,163 @@
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px; /* Thin scrollbar width */
+    height: 8px; /* Thin scrollbar height for horizontal scrolling */
+}
+
+::-webkit-scrollbar-track {
+    background: #202020; /* Darker background for the scrollbar track */
+    border-radius: 10px; /* Rounded corners for the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555; /* Dark gray color for the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+    border: 2px solid #333; /* Border to add some separation between thumb and track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Lighter gray on hover for better visibility */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #181818; /* Darker backdrop */
+    color: #f0f0f0; /* Light gray text for general content */
+    scrollbar-width: thin; /* Firefox property for a thin scrollbar */
+    scrollbar-color: #555 #202020; /* Thumb and track color for Firefox */
+}
+
+header {
+    background-color: #252525; /* Slightly lighter black for header */
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tree-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+header h1 {
+    margin-top: 0;
+    font-size: 36px;
+    font-weight: bold;
+    color: #66ff66; /* Greenish color for title */
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    background-color: #202020; /* Flexbox container color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.left-section, .right-section {
+    background-color: #2a2a2a; /* Lighter black for sections */
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.left-section {
+    flex: 1;
+    max-width: 40%;
+}
+
+.right-section {
+    flex: 2;
+    max-width: 60%;
+}
+
+.upload-box, .live-plant-image-box, .live-data-display-box {
+    background-color: #333; /* Lightest black for box items */
+    border: 1px solid #444;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0; /* Light gray text for content in boxes */
+}
+
+.upload-box label, .live-plant-image-box label, .live-data-display-box label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f5f5f5; /* Lighter gray for labels */
+}
+
+.upload-box input[type="file"] {
+    margin-bottom: 10px;
+    color: #e0e0e0; /* Light gray for file input text */
+}
+
+.upload-box button {
+    background-color: #66ff66;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-box button:hover {
+    border: 1px solid #bfbfbf; /* Thin light grayish border on hover */
+    transform: scale(1.02); /* Slight pop-out effect */
+}
+
+.live-plant-image-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.live-data-display-box {
+    margin-bottom: 20px;
+}
+
+.live-data-display-box label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f5f5f5; /* Lighter gray for labels */
+}
+
+.live-data-display-box input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444;
+    color: #f0f0f0; /* Light gray for input text */
+}
+
+.upload-box:hover, .live-plant-image-box:hover, .live-data-display-box:hover {
+    border: 1px solid #bfbfbf; /* Thin light grayish border on hover */
+    transform: scale(1.02); /* Slight pop-out effect */
+}
+
+footer {
+    background-color: #252525;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+footer p {
+    margin-bottom: 10px;
+    color: #ccc; /* Light gray text in footer */
+}
