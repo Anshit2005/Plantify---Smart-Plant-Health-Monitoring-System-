@@ -71,7 +71,10 @@ Plantify/
 4. **AI Models:** (Optional) AI generates plant images based on sensor data.
 
 ## Contributors
-- [Your Name] - Developer
+- Anshit Agarwal - IoT and Frontend
+- Kaustubh Salodkar - IoT and Frontend
+- Krish Teckchandani - AI/ML Model
+- Sudhanshu Tamhankar - AI/ML Model
 
 ## Technologies Used
 - NodeMCU (ESP8266)
