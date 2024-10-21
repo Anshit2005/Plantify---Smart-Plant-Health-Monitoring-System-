@@ -1,0 +1,2 @@
+# Plantify : Smart Plant Health Monitoring System 
+ This repository contains the code and documentation for Plantify: Smart Plant Health Monitoring System, developed as part of a Design Credit project. The system utilizes NodeMCU, temperature, humidity, and soil moisture sensors to monitor plant health in real time. The data is transmitted to an ESP web server, fetched by a website via API calls, and processed by AI models to generate an image representing the plant’s potential condition under the current environmental parameters.
