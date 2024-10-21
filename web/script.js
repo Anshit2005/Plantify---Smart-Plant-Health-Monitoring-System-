@@ -1,6 +1,6 @@
 function fetchData() {
     // ESP8266 server IP address
-    const url = 'http://192.168.145.184/';
+    const url = 'http://192.168.254.184/';
 
     fetch(url)
         .then(response => {
