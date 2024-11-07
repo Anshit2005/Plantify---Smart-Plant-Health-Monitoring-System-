@@ -8,23 +8,29 @@
 </head>
 <body>
     <header>
-        <h1>Plantify : Plant Health Monitoring System</h1>
-        <p>Upload an image of your plant and monitor its health through real-time data.</p>
+        <h1>Plantify: Plant Health Monitoring System</h1>
+        <p>Monitor your plant's health through real-time data and generated insights.</p>
     </header>
     <main class="flex-container">
         <section class="left-section">
-            <div class="upload-box">
-                <label for="upload-image">Upload an Image of Your Plant</label>
-                <p>Drag and drop or click to upload an image of your plant.</p>
-                <input type="file" id="upload-image" accept="image/*">
-                <button>Upload</button>
+            <!-- Plant Description Box -->
+            <div class="plant-description-box">
+                <label>Plant Description Based on Current Parameters</label>
+                <p id="plant-description">Description will appear here based on live data.</p>
             </div>
+            
+            <!-- Generated Plant Image Box -->
             <div class="live-plant-image-box">
-                <label>Live Plant Image</label>
-                <p>Displays the current plant image based on live data.</p>
-                <img src="" alt="Live Plant Image">
+                <label>Generated Plant Image</label>
+                <p>This image represents the plant's expected appearance based on current parameters.</p>
+                <img id="live-plant-image" src="" alt="Generated Plant Image" style="width: 300px;">
             </div>
+
+            <!-- Generate Image and Description Button -->
+            <button id="generate-image-btn">Generate Image and Description</button>
         </section>
+
+        <!-- Right Section: Live Data Display Boxes (Unchanged) -->
         <section class="right-section">
             <div class="live-data-display-box">
                 <label>Current Humidity</label>
@@ -44,8 +50,8 @@
         </section>
     </main>
     <footer>
-        <p>Data sources: [insert data sources]</p>
-        <p>Learn more about interpreting readings: [insert links to resources or documentation]</p>
+        <p>Made with love by ANNA</p>
+        <p>The project is a Plant Health Monitoring System, which uses live environmental data and image analysis to provide real-time insights into a plant's health and conditions.</p>
     </footer>
     <script src="script.js"></script>
 </body>
