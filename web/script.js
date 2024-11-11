@@ -10,7 +10,7 @@ function fetchData() {
             return response.json();
         })
         .then(data => {
-            console.log('Received data:', data);
+            // console.log('Received data:', data);
             document.getElementById('temperature').value = data.temperature + ' °C';
             document.getElementById('humidity').value = data.humidity + ' %';
             document.getElementById('soil-moisture').value = data.soilMoisture + ' %';
@@ -20,12 +20,25 @@ function fetchData() {
 
 // Function to fetch generated image from ML model
 async function generateImage() {
-    const humidity = document.getElementById('humidity').value;
-    const temperature = document.getElementById('temperature').value;
-    const soilMoisture = document.getElementById('soil-moisture').value;
+    // const humidity = document.getElementById('humidity').value;
+    // const temperature = document.getElementById('temperature').value;
+    // const soilMoisture = document.getElementById('soil-moisture').value;
+
+    const url = 'http://172.30.1.172/';
+    const response = await fetch(url);
+    const data = await response.json();
+    const humidity = data.humidity;
+    const temperature = data.temperature;
+    const soilMoisture = data.soilMoisture;
+
+
+    console.log(`request sent with data :Humidity: ${humidity}, Temperature: ${temperature}, Soil Moisture: ${soilMoisture}`);
+
+
+
 
     try {
-        const response = await fetch('http://172.30.3.70:5000/generate-image', {
+        const response = await fetch('http://localhost:5000/generate-image', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -37,40 +50,36 @@ async function generateImage() {
                     soilMoisture: soilMoisture
                 }
             })
-        });document.getElementById("generate-image-btn").addEventListener("click", async () => {
-            try {
-                const response = await fetch("http://localhost:5000/generate-image-and-description");
-                const data = await response.json();
-        
-                // Update the image
-                document.getElementById("live-plant-image").src = data.imageUrl;
-        
-                // Update the description
-                const desc = data.description || "No description available.";
-                document.getElementById("plant-description").innerText = desc;
-        
-                // Update the data fields
-                document.getElementById("temperature").value = `Temperature: ${data.temperature} °C`;
-                document.getElementById("humidity").value = `Humidity: ${data.humidity}%`;
-                document.getElementById("soil-moisture").value = `Soil Moisture: ${data.soilMoisture}%`;
-        
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                alert("Failed to fetch image and description. Please try again.");
-            }
         });
         
-
-        if (!response.ok) {
-            throw new Error(`Error fetching image: ${response.statusText}`);
-        }
+        // console.log('Response:', response);
+     
 
         const data = await response.json();
         const imageUrl = data.image_url;
-        //const desc =data.description;
+        const descr = data.description || "No description available.";
+        // const descr =data.description;
+        console.log('Image URL:', imageUrl);
+        console.log('Description:', descr);
 
         const livePlantImage = document.getElementById('live-plant-image');
-        livePlantImage.src = `${imageUrl}?t=${new Date().getTime()}`; // Prevent caching
+        livePlantImage.src = `C:\\Users\\Sudhanshu Tamhankar\\Desktop\\Codes\\Neem_Dataset\\${imageUrl}`; // Prevent caching
+        // "static\image_1886.png"
+
+
+            // Update the image
+            // document.getElementById("live-plant-image").src = data.imageUrl;
+
+            // Update the description
+            document.getElementById("plant-description").innerText = descr;
+    
+            // Update the data fields
+            // document.getElementById("temperature").value = `Temperature: ${data.temperature} °C`;
+            // document.getElementById("humidity").value = `Humidity: ${data.humidity}%`;
+            // document.getElementById("soil-moisture").value = `Soil Moisture: ${data.soilMoisture}%`;
+
+
+
     } catch (error) {
         console.error('Error:', error);
     }
@@ -89,3 +98,4 @@ document.addEventListener('DOMContentLoaded', () => {
         generateImageBtn.addEventListener('click', generateImage);
     }
 });
+
