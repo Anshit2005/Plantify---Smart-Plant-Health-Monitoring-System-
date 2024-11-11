@@ -1,6 +1,6 @@
 // Function to fetch sensor data
 function fetchData() {
-    const url = 'http://172.30.1.172/';
+    const url = 'http://172.30.0.160/';
 
     fetch(url)
         .then(response => {
